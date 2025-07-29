@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['teams_cache_clear2.py'],
+    ['C:\\Users\\Root\\Downloads\\teams_cache-20250729T110236Z-1-001\\teams_cache\\2\\teams_cache_clear2.py'],
     pathex=[],
     binaries=[],
     datas=[],

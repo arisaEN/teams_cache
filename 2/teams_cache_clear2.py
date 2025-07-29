@@ -46,14 +46,17 @@ def clear_cache():
         #         shutil.rmtree(item_path, ignore_errors=True)
                 
         #昔Ver フォルダの中身消す。
-        for item in os.listdir(classic_path):
-            item_path = os.path.join(classic_path, item)
-            if os.path.isdir(item_path):
-                shutil.rmtree(item_path, ignore_errors=True)
-            else:
-                os.remove(item_path)
-
-        #新Ver キャッシュフォルダだけ消す   
+        if os.path.exists(classic_path):
+            for item in os.listdir(classic_path):
+                item_path = os.path.join(classic_path, item)
+                if os.path.isdir(item_path):
+                    shutil.rmtree(item_path, ignore_errors=True)
+                else:
+                    os.remove(item_path)
+            deleted.append("Classic Teams")
+        else:
+            print("Classic Teamsフォルダは存在しません")
+                #新Ver キャッシュフォルダだけ消す   
         for sub in ["LocalCache", "LocalState", "TempState"]: #新しいteamsのキャッシュフォルダ subの中にフォルダ名いれる。
             path = os.path.join(new_path, sub) #新しいteamsのキャッシュフォルダのパス subはフォルダ名のリスト ファイルパス+フォルダ名
             if os.path.exists(path): #新しいteamsのキャッシュフォルダが存在するか確認
