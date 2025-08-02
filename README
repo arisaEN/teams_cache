@@ -7,6 +7,9 @@ teamsキャッシュのフォルダを探し、あれば削除する。
 exe作成方法
 pip install pyinstaller 
 pyinstaller --onefile --noconsole --distpath . teams_cache_clear2.py
+#アイコン反映させるコマンド
+pyinstaller --onefile --windowed --icon=teams_cache.ico teams_cache_clear2.py
+
 
 --distpath . → dist フォルダを作らず、カレントディレクトリに直接 exe を作成。
 
@@ -18,4 +21,5 @@ pyinstaller --onefile --noconsole --distpath . teams_cache_clear2.py
 exeバージョン履歴
 -------------------------------------------------------------------------------------
 2 teamsキャッシュクリアアプリを作成
-3 teamsリンクが見つからない時、エラーメッセージを吐くように設定。これまではフリーズしていた。
+3 teamsリンクが見つからない時、エラーメッセージを吐くように設定。これまではフリーズしていた
+4 UIの変更。
